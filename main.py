@@ -1,4 +1,5 @@
 from Animals import Animals
+from CounterAnimals import CounterAnimals
 
 
 def search_type():
@@ -54,7 +55,7 @@ def new_animal():
 
 
 print('Добро пожаловать в Систему учета для питомника! ')
-
+animalCounter = CounterAnimals()
 while True:
     print('\nДоступные действия:\n'
           '1) Завести новое животное.\n'
@@ -65,6 +66,8 @@ while True:
     if action == '1':
         if new_animal() == 200:
             print('Животное успешно добавлено в базу!')
+            animalCounter.add()
+            print('Всего животных было создано', animalCounter.return_counter())
         else:
             print('Информация не была добавлена в базу!')
 
